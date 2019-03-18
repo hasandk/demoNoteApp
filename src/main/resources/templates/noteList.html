@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>NoteBook</title>
+</head>
+<body>
+
+<h3>Welcome to my NoteBook</h3>
+<table>
+
+    <thead>
+    <th>Navn</th>
+    <th>indhold</th>
+    </thead>
+    <tr th:each="note : ${Notes}">
+        <td th:text="${note.name}"></td>
+        <br>
+        <td th:text="${note.indhold}"></td>
+
+    </tr>
+</table>
+</body>
+</html>

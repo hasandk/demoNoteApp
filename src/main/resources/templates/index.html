@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>NoteBook</title>
+</head>
+<body>
+
+    <h3>Welcome to my NoteBook</h3>
+
+<form method="post" action="/opretNote">
+    <input type="text" name="name"placeholder="Navn">
+    <br>
+    <br>
+    <textarea type="text" name="indhold" placeholder="Note"> </textarea>
+    <input type="submit" value="Create Note">
+</form>
+<table>
+
+<thead>
+    <th>Navn</th>
+    <th>indhold</th>
+</thead>
+        <tr th:each="note : ${Notes}">
+        <td th:text="${note.name}"></td>
+            <br>
+        <td th:text="${note.indhold}"></td>
+            <td>
+                <a th:href="${'editNote/' + note.noteId}" >
+                    <span class="fas fa-pen"></span> Rediger
+                </a>
+            </td>
+
+    </tr>
+</table>
+</body>
+</html>

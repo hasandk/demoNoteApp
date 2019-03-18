@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Notes</title>
+
+</head>
+<body>
+
+<form th:method="put" th:action="@{/editNote}" th:object="${note}">
+    <input type="hidden" th:field="${note.noteId}">
+
+    <input type="text" th:field= "${note.name}" placeholder="Navn">
+    <br>
+    <br>
+    <textarea type="text" th:field="${note.indhold}" placeholder="Note"> </textarea>
+    <input type="submit" value="Edit Note">
+</form>
+
+
+</body>
+</html>
